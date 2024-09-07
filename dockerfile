@@ -7,13 +7,13 @@ FROM node
 WORKDIR /app
 
 # Copia el package.json y package-lock.json al directorio de trabajo
-COPY merchandise/package*.json ./
+COPY package*.json ./
 
 # Instala las dependencias
 RUN npm install -g pm2
 
 # Copia el resto de la aplicación al directorio de trabajo
-COPY merchandise/ ./
+COPY . .
 
 # Expone el puerto en el que la aplicación estará corriendo
 EXPOSE 3003
